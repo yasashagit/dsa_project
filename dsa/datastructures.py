@@ -20,6 +20,35 @@ class Array:
     def __str__(self):
         return str(self.data)
     
+# List data structure
+class List:
+    def __init__(self, initial=None):
+        self.data = initial if initial else []
+
+    def insert(self, index, value):
+        self.data.insert(index, value)
+
+    def append(self, value):
+        self.data.append(value)
+
+    def delete(self, index):
+        if 0 <= index < len(self.data):
+            return self.data.pop(index)
+        return None
+
+    def search(self, value):
+        for i, v in enumerate(self.data):
+            if v == value:
+                return i
+        return -1
+
+    def length(self):
+        return len(self.data)
+
+    def __str__(self):
+        return str(self.data)
+
+
 # Linked list data structure
 class Node:
     def __init__(self, value):
@@ -79,8 +108,6 @@ class LinkedList:
             values.append(str(current.value))
             current = current.next
         return " → ".join(values)
-
-
 
 # Stack data structure
 class Stack:
