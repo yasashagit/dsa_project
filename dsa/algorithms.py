@@ -93,3 +93,34 @@ def merge_sort(arr):
             j += 1
             k += 1
     return arr
+
+def linear_search(arr, target):
+    # Iterate through the length of the array
+    for i in range(len(arr)):
+        # Check if current element matches target
+        if arr[i] == target:
+            return i  # Return the index
+            
+    return -1  # Target not found
+
+def binary_search(arr, target):
+    left = 0
+    right = len(arr) - 1
+
+    while left <= right:
+        # Calculate middle index (integer division)
+        mid = (left + right) // 2
+        
+        # Check if target is present at mid
+        if arr[mid] == target:
+            return mid
+        
+        # If target is greater, ignore the left half
+        elif arr[mid] < target:
+            left = mid + 1
+            
+        # If target is smaller, ignore the right half
+        else:
+            right = mid - 1
+            
+    return -1  # Target not found
