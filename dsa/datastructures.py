@@ -20,7 +20,7 @@ class Array:
     def __str__(self):
         return str(self.data)
     
-# linked list data structure
+# Linked list data structure
 class Node:
     def __init__(self, value):
         self.value = value
@@ -82,7 +82,7 @@ class LinkedList:
 
 
 
-# stack data structure
+# Stack data structure
 class Stack:
     def __init__(self):
         self.items = []
@@ -107,7 +107,7 @@ class Stack:
         return "Stack(top→bottom): " + str(list(reversed(self.items)))
 
 
-# queue data structure
+# Queue data structure
 from collections import deque
 
 class Queue:
