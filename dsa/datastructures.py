@@ -23,7 +23,7 @@ class Array:
 # List data structure
 class List:
     def __init__(self, initial=None):
-        self.data = initial if initial else []
+        self.data = list(initial) if initial else []
 
     def insert(self, index, value):
         self.data.insert(index, value)
