@@ -1,0 +1,41 @@
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.pkl
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# Byte-compiled / optimized / DLL files
+*.so
+*.dll
+*.dylib
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+*.ipynb_convert/
+
+# --- VS Code ---
+.vscode/
+*.code-workspace
+
+# --- OS / editor cache ---
+.DS_Store
+Thumbs.db
+
+# --- Logs ---
+*.log
+
+# --- Build / dist ---
+build/
+dist/
+*.egg-info/
+
+# --- Notebooks auto-save ---
+*.autosave.ipynb
