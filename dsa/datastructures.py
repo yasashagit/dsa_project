@@ -1,4 +1,5 @@
 # Array data structure
+
 class Array:
     def __init__(self, initial=None):
         self.data = initial if initial else []
@@ -21,6 +22,7 @@ class Array:
         return str(self.data)
     
 # List data structure
+
 class List:
     def __init__(self, initial=None):
         self.data = list(initial) if initial else []
@@ -50,6 +52,7 @@ class List:
 
 
 # Linked list data structure
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -110,6 +113,7 @@ class LinkedList:
         return " → ".join(values)
 
 # Stack data structure
+
 class Stack:
     def __init__(self):
         self.items = []
@@ -135,6 +139,7 @@ class Stack:
 
 
 # Queue data structure
+
 from collections import deque
 
 class Queue:
