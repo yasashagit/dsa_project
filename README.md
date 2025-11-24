@@ -1,4 +1,4 @@
-# mplementation and Analysis of Data Structures and Algorithms
+# Implementation and Analysis of Data Structures and Algorithms
 
 **Authors:** Eduard Rednic, Oleksandr Yakovlev
 
