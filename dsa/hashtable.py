@@ -20,10 +20,3 @@ class HashTable:
             if pair[0] == key:
                 return pair[1]
         return None
-
-    def remove(self, key):
-        index = self._hash_function(key)
-        for i, pair in enumerate(self.table[index]):
-            if pair[0] == key:
-                del self.table[index][i]
-                return
