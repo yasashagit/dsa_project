@@ -7,7 +7,9 @@ class Node:
         self.value = value
         self.left = None
         self.right = None
-        
+
+# BST
+     
 class BST:
     def __init__(self):
         self.root = None
@@ -154,6 +156,8 @@ class BST:
         add_nodes_edges(self.root)
         return SVG(dot.pipe(format='svg'))
 
+# BT
+
 class BinaryTree:
     def __init__(self):
         self.root = None
@@ -207,6 +211,7 @@ class BinaryTree:
             print(level)
 
     # Traversals: preorder, inorder, postorder
+
     def visit(self, node):
         print(node.value)
 
@@ -255,13 +260,14 @@ class BinaryTree:
         add_nodes_edges(self.root)
         return SVG(dot.pipe(format='svg'))
 
+# AVL 
 
 class AVLNode:
     def __init__(self, value):
         self.value = value
         self.left = None
         self.right = None
-        self.height = 1  # height of this node
+        self.height = 1
 
 
 class AVLTree:
@@ -282,34 +288,30 @@ class AVLTree:
         x = y.left
         T2 = x.right
 
-        # Perform rotation
         x.right = y
         y.left = T2
 
-        # Update heights
         y.height = 1 + max(self.get_height(y.left), self.get_height(y.right))
         x.height = 1 + max(self.get_height(x.left), self.get_height(x.right))
 
-        # New root of this subtree
         return x
 
     def left_rotate(self, x):
         y = x.right
         T2 = y.left
 
-        # Perform rotation
         y.left = x
         x.right = T2
 
-        # Update heights
         x.height = 1 + max(self.get_height(x.left), self.get_height(x.right))
         y.height = 1 + max(self.get_height(y.left), self.get_height(y.right))
 
-        # New root of this subtree
         return y
 
     def _insert(self, node, value):
+
         # 1) Normal BST insert
+
         if not node:
             return AVLNode(value)
         if value < node.value:
@@ -318,28 +320,34 @@ class AVLTree:
             node.right = self._insert(node.right, value)
 
         # 2) Update height
+
         node.height = 1 + max(self.get_height(node.left),
                               self.get_height(node.right))
 
         # 3) Get balance factor
+
         balance = self.get_balance(node)
 
         # 4) If unbalanced, do rotations
 
         # Case 1: Left Left
+
         if balance > 1 and value < node.left.value:
             return self.right_rotate(node)
 
         # Case 2: Right Right
+
         if balance < -1 and value > node.right.value:
             return self.left_rotate(node)
 
         # Case 3: Left Right
+
         if balance > 1 and value > node.left.value:
             node.left = self.left_rotate(node.left)
             return self.right_rotate(node)
 
         # Case 4: Right Left
+
         if balance < -1 and value < node.right.value:
             node.right = self.right_rotate(node.right)
             return self.left_rotate(node)
@@ -350,6 +358,7 @@ class AVLTree:
         self.root = self._insert(self.root, value)
 
     # Simple preorder traversal to show structure
+
     def _preorder(self, node):
         if not node:
             return
@@ -370,7 +379,6 @@ class AVLTree:
 
             node_id = str(id(node))
 
-            # If value is a (language, speed) tuple, show only language name
             if isinstance(node.value, tuple):
                 label = str(node.value[0])
             else:
